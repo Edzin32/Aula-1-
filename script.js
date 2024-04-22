@@ -3,20 +3,19 @@ var canvas = document.getElementById('Canvas');
 var ctx = canvas.getContext('2d');
 
 var img = new Image();
+var x = 0;
+var y = 0;
 img.onload = function() {
-    ctx.drawImage(img, 0, 0, 50, 50); // Desenha a imagem na posição (0, 0) com largura e altura de 50 pixels
-    moveImage();
+    ctx.drawImage(img, 0, 0, 50, 50); 
+    
 };
-img.src = 'img/nave.png'; // Certifique-se de que o caminho para a imagem esteja correto
+img.src = 'img/nave.png'; 
 
-function moveImage() {
-    var x = 0;
-    var y = 0;
-   
 
+ 
     function update() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, x, y, 50, 50); // Desenha a imagem na posição (x, y) com largura e altura de 50 pixels
+        ctx.drawImage(img, x, y, 80, 80); 
         x += 1;
         y+=1;
         if (x < canvas.width - 50) {
@@ -25,4 +24,4 @@ function moveImage() {
     }
 
     update();
-}
+
