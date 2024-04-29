@@ -14,7 +14,7 @@ img.src = 'img/nave.png';
         ctx.drawImage(img, x, y, 80, 80); 
         x += 1;
         y+=1;
-        if (x < canvas.width - 78) {
+        if (x < canvas.width - 79) {
             requestAnimationFrame(update);
         }
     }
