@@ -1,19 +1,24 @@
-<!--
-    Nome:Edgar Lódula de Assis nº:07 Turma:3°A              
-    Nome:Guilherme Felisberto Reis nº:12              -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Canvas com Imagem</title>
-    <style>
-        canvas {
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
-    <canvas id="Canvas" width="600" height="600"></canvas>
-    <script src="script.js"></script>
-</body>
+<html>
+    <head>
+        <script src="gamesWeb.js"></script>
+    </head>
+    <body>
+        <canvas id="canvas" width="800" height="700">
+            
+        </canvas>
+        <script>
+            canvas=document.getElementById("canvas");
+            ctx=canvas.getContext("2d");
+            nave=new Image();
+            nave.src="img/nave.png";
+            x=400-nave.width/2;
+            nave.onload=function(){
+            ctx.drawImage(nave,x,700-160);    
+            }
+
+            document.addEventListener("Keydown",function(evento){
+                                         movimentaNaveTeclado(evento,KeyCode);
+                                     })
+        </script>
+    </body>
 </html>
